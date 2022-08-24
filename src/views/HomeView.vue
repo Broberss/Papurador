@@ -26,76 +26,77 @@ export default {
   <div class="tudo">
     <div class="inputes">
       <label for="preco">Valor do produto</label>
-      <input class="inputiu" v-model="preco" id="preco" type="number" /><br />
+      <input class="inputs" v-model="preco" id="preco" type="number" /><br />
       <label for="jorgeta">Selecione a qualidade do serviço</label>
-      <select class="inputiu" v-model="porcentagem" id="jorgeta">
+      <select class="inputs" v-model="porcentagem" id="jorgeta">
         <option value="0" disabled>Selecione</option>
-        <option value="5">Repugnante (5%)</option>
-        <option value="10">Horrendo (10%)</option>
-        <option value="15">Mais ou menos (15%)</option>
-        <option value="20">Bah (20%)</option>
-        <option value="25">Morbástico (25%)</option>
-        <option value="30">Grutástico (30%)</option></select
+        <option value="5">O contrário de bom (5%)</option>
+        <option value="10">Quase o contrário de bom (10%)</option>
+        <option value="15">B (15%)</option>
+        <option value="20">BB (20%)</option>
+        <option value="25">BO (25%)</option>
+        <option value="30">B O M(30%)</option></select
       ><br />
       <label for="preco">Quantas pessoas vão pagar</label>
-      <input class="inputiu" v-model="pessoas" id="pessoas" type="number" />
+      <input class="inputs" v-model="pessoas" id="pessoas" type="number" />
       <br />
-      <!-- <button @click="calcular()">Calcular</button> -->
       <div class="choice act" @click="calcular()">
         <i class="fa fa-angle-double-right"></i>
         <span>CALCULAR</span>
       </div>
     </div>
     <div class="resultado">
-      <h3>O valor que você pagará é:</h3>
+      <h3>O valor requisitado a vossa pessoa para a devida amenta é:</h3>
       <h1 id="final"></h1>
     </div>
   </div>
-  <div class="sans">
+  <div class="papyrus">
     <img
       src="../assets/papyrus-undertale.gif"
-      alt="sand"
-      class="sa"
-      title="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      class="pa"
+      title="El papiron"
     />
   </div>
 </template>
 <style>
-@import url(//db.onlinewebfonts.com/c/7cc6719bd5f0310be3150ba33418e72e?family=Comic+Sans+MS);
+@import url('http://fonts.cdnfonts.com/css/papyrus');
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
 body {
-  font-family: "Comic Sans MS";
   background-color: black;
+  font-family: "Papyrus";
+  font-size: larger;
 }
 
 .tudo {
   color: white;
   margin: 50px;
   border: 3px solid white;
+  border-radius: 8px;
   padding: 20px;
   width: 50%;
   display: inline-block;
 }
 
-.inputiu {
+.inputs {
   margin-left: 15px;
   padding: 4px;
   font-family: "Comic Sans MS";
   border-radius: 8px;
   background-color: black;
-  color: #ff9900;
-  border: 2px solid #ff9900;
+  color: #0394fc;
+  border: 2px solid #0394fc;
+  
 }
 
-.inputiu:hover {
-  color: #ffff33;
-  border: 2px solid #ffff33;
+.inputs:hover {
+  color: #6beeff;
+  border: 2px solid #6beeff;
 }
 
-.sans {
-  width: 40%;
-  float: right;
+.papyrus {
+  width:40%;
+  float: left;
 }
 
 .choices {
@@ -111,10 +112,10 @@ body {
   width: 7.5rem;
   text-align: center;
   font-size: 2rem;
-  border: 2px solid #ff9900;
+  border: 2px solid #0394fc;
   padding: 0.5rem 1rem;
   transition: all 0.2s ease;
-  color: #ff9900;
+  color: #0394fc;
   margin-top: 10px;
 
   display: flex;
@@ -124,8 +125,8 @@ body {
 }
 
 .choice:hover {
-  color: #ffff33;
-  border: 2px solid #ffff33;
+  color: #6beeff;
+  border: 2px solid #6beeff;
   cursor: grab;
   transform: scale(1.2);
 }
@@ -134,7 +135,11 @@ i {
   padding-right: 0.5rem;
 }
 
-.fa-heart {
-  color: crimson;
+.pa{
+  height: 850px;
+  transition: 20s;
+}
+.pa:hover{
+  transform: scale(1.5);
 }
 </style>
